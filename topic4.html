@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How Some Abuse AI</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="logo">AI in Everyday Life</div>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="blogs.html">Blogs</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="founders.html">Founders</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="references.html">References</a></li>
+  </ul>
+  <div class="toggle-theme" id="themeToggle">🌙</div>
+</nav>
+
+<main style="padding:2rem; max-width:900px; margin:0 auto;">
+
+  <!-- HERO -->
+  <section class="topic-hero">
+    <h1>How Some Abuse AI</h1>
+    <p>Understanding the ways AI can be misused and why responsible usage is essential.</p>
+  </section>
+
+  <!-- CONTENT -->
+  <article class="topic-article">
+    <p>
+      Despite its benefits, AI is sometimes misused. One common abuse is academic dishonesty: generating essays, coding, or assignments without understanding the material. This reliance on AI shortcuts weakens learning and skill development.
+    </p>
+
+    <p>
+      AI can also be exploited for misinformation. Deepfake videos, fake images, and AI-generated voices can manipulate perception, deceive, or harass. In cybersecurity, AI is used by malicious actors to automate phishing, crack passwords, and identify vulnerabilities.
+    </p>
+
+    <div class="highlight-box">
+      <h3>Misuse in Organizations and Creativity</h3>
+      <p>
+        Companies and organizations can misuse AI for surveillance, excessive tracking, or algorithmic manipulation. Biases in AI systems may reinforce discrimination in hiring, policing, or lending when applied without ethical safeguards. Even creative industries are affected: AI-generated art can replicate existing styles without credit, and overreliance on AI can diminish originality.
+      </p>
+    </div>
+
+    <p>
+      These examples highlight that AI is a neutral tool — the impact depends entirely on human choices. Ethical and responsible use is essential to prevent harm.
+    </p>
+  </article>
+
+  <!-- VIDEO -->
+  <div class="video-wrapper" style="margin-top:2rem;">
+    <iframe src="https://www.youtube.com/embed/VIDEO_ID_4" title="Vlog 4" allowfullscreen></iframe>
+  </div>
+
+  <!-- Related -->
+  <section style="margin-top:3rem;">
+    <h3>Related Posts</h3>
+    <div class="blog-grid">
+      <div class="blog-card">
+        <span class="tag">Creativity</span>
+        <h3>AI Destroys Creativity and Problem Solving</h3>
+        <a href="topic5.html">Read →</a>
+      </div>
+      <div class="blog-card">
+        <span class="tag">Daily Life</span>
+        <h3>AI Integrated in Daily Tasks</h3>
+        <a href="topic3.html">Read →</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- Footer -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-section">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="blogs.html">Blogs</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="founders.html">Founders</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-section">
+      <h4>Categories</h4>
+      <ul>
+        <li><a href="topic1.html">History</a></li>
+        <li><a href="topic2.html">Early AI</a></li>
+        <li><a href="topic3.html">Daily Life</a></li>
+        <li><a href="topic4.html">Ethics</a></li>
+        <li><a href="topic5.html">Creativity</a></li>
+      </ul>
+    </div>
+    <div class="footer-section">
+      <h4>Follow Us</h4>
+      <ul>
+        <li><a href="#">Facebook</a></li>
+        <li><a href="#">Twitter</a></li>
+        <li><a href="#">Instagram</a></li>
+        <li><a href="#">LinkedIn</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    &copy; 2025 AI in Everyday Life. All rights reserved.
+  </div>
+</footer>
+
+
+<div id="backToTop">↑</div>
+
+<script>
+const toggle = document.getElementById('themeToggle');
+toggle.addEventListener('click', () => {
+  const html = document.documentElement;
+  if (html.getAttribute('data-theme') === 'dark') {
+    html.removeAttribute('data-theme'); // switch to light
+    toggle.textContent = '🌙';
+  } else {
+    html.setAttribute('data-theme', 'dark'); // switch to dark
+    toggle.textContent = '☀️';
+  }
+});
+
+// Subscribe Form
+const subscribeButton = document.getElementById('subscribeButton');
+const emailInput = document.getElementById('subscribeEmail');
+const subscribeForm = document.getElementById('subscribeSection');
+
+// Create message container
+const msgContainer = document.createElement('div');
+msgContainer.style.display = 'none';
+msgContainer.style.marginTop = '1rem';
+msgContainer.style.padding = '0.8rem 1rem';
+msgContainer.style.backgroundColor = '#4f46e5';
+msgContainer.style.color = '#fff';
+msgContainer.style.borderRadius = '8px';
+msgContainer.style.textAlign = 'center';
+subscribeForm.appendChild(msgContainer);
+
+subscribeButton.addEventListener('click', (e) => {
+  e.preventDefault();
+  const email = emailInput.value.trim();
+  if(email){
+    msgContainer.textContent = 'Thank you for subscribing!';
+    msgContainer.style.backgroundColor = '#4f46e5';
+    msgContainer.style.display = 'block';
+    emailInput.value = '';
+    setTimeout(() => {
+      msgContainer.style.display = 'none';
+    }, 4000);
+  } else {
+    msgContainer.textContent = 'Please enter a valid email.';
+    msgContainer.style.backgroundColor = '#dc2626'; // red
+    msgContainer.style.display = 'block';
+    setTimeout(() => {
+      msgContainer.style.display = 'none';
+    }, 4000);
+  }
+});
+
+</script>
+
+</body>
+</html>

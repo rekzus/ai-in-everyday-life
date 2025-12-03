@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>References</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="logo">AI in Everyday Life</div>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="blogs.html">Blogs</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="founders.html">Founders</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="references.html" class="active">References</a></li>
+  </ul>
+  <div class="toggle-theme" id="themeToggle">🌙</div>
+</nav>
+
+<main class="fade-in" style="padding: 2rem; max-width: 900px; margin: 0 auto;">
+  
+  <h1>References</h1>
+  <p style="margin-bottom: 1.5rem;">
+    Below is a curated list of books, articles, journals, and online sources used throughout this AI in Everyday Life project. 
+    These works helped shape the research, historical background, and discussions found in our content.
+  </p>
+
+  <div class="reference-box" style="
+      border: 1px solid var(--border);
+      padding: 1.5rem;
+      border-radius: 12px;
+      background: var(--card-bg);
+      box-shadow: var(--shadow);
+  ">
+    <ul style="line-height: 1.8; list-style-position: inside;">
+      <li>Amabile, T. (1996). <i>Creativity in context</i>. Boulder, CO: Westview Press.</li>
+      <li>Brynjolfsson, E., & McAfee, A. (2014). <i>The Second Machine Age</i>. W. W. Norton & Company.</li>
+      <li>Carr, N. (2010). <i>The Shallows</i>. W. W. Norton & Company.</li>
+      <li>Chesney, R., & Citron, D. (2019). Deepfakes and the new disinformation war. 
+        <a href="https://www.foreignaffairs.com/articles/world/2018-12-11/deepfakes-and-new-disinformation-war" target="_blank">
+          Foreign Affairs
+        </a>
+      </li>
+      <li>Isaacson, W. (2014). <i>The Innovators</i>. Simon & Schuster.</li>
+      <li>Kaplan, J. (2016). <i>Artificial Intelligence: What Everyone Needs to Know</i>. Oxford University Press.</li>
+      <li>McCarthy, J., Minsky, M., Rochester, N., & Shannon, C. (1955). 
+        <i>Proposal for the Dartmouth Summer Research Project on Artificial Intelligence</i>.</li>
+      <li>Nilsson, N. (2009). <i>The Quest for Artificial Intelligence</i>. Cambridge University Press.</li>
+      <li>Russell, S., & Norvig, P. (2010). <i>Artificial Intelligence: A Modern Approach</i> (3rd ed.). Prentice Hall.</li>
+      <li>Samuel, A. (1963). Some studies in machine learning using the game of checkers. 
+        <i>IBM Journal of Research and Development</i>, 3(3), 210–229.</li>
+      <li>Standage, T. (1998). <i>The Victorian Internet</i>. Phoenix.</li>
+      <li>Turing, A. (1950). Computing machinery and intelligence. 
+        <i>Mind</i>, 59(236), 433–460.</li>
+      <li>
+        <a href="https://www.technologyreview.com" target="_blank">MIT Technology Review</a> — Various articles on AI, ethics, creativity, and emerging technologies.
+      </li>
+    </ul>
+  </div>
+
+</main>
+
+<footer>
+  <div class="footer-top">
+    <div class="footer-section">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="blogs.html">Blogs</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="founders.html">Founders</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-section">
+      <h4>Categories</h4>
+      <ul>
+        <li><a href="topic1.html">History</a></li>
+        <li><a href="topic2.html">Early AI</a></li>
+        <li><a href="topic3.html">Daily Life</a></li>
+        <li><a href="topic4.html">Ethics</a></li>
+        <li><a href="topic5.html">Creativity</a></li>
+      </ul>
+    </div>
+    <div class="footer-section">
+      <h4>Follow Us</h4>
+      <ul>
+        <li><a href="#">Facebook</a></li>
+        <li><a href="#">Twitter</a></li>
+        <li><a href="#">Instagram</a></li>
+        <li><a href="#">LinkedIn</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    &copy; 2025 AI in Everyday Life. All rights reserved.
+  </div>
+</footer>
+
+<div id="backToTop">↑</div>
+
+<script>
+const toggle = document.getElementById('themeToggle');
+toggle.addEventListener('click', () => {
+  const html = document.documentElement;
+  if (html.getAttribute('data-theme') === 'dark') {
+    html.removeAttribute('data-theme'); // switch to light
+    toggle.textContent = '🌙';
+  } else {
+    html.setAttribute('data-theme', 'dark'); // switch to dark
+    toggle.textContent = '☀️';
+  }
+});
+
+// Subscribe Form
+const subscribeButton = document.getElementById('subscribeButton');
+const emailInput = document.getElementById('subscribeEmail');
+const subscribeForm = document.getElementById('subscribeSection');
+
+// Create message container
+const msgContainer = document.createElement('div');
+msgContainer.style.display = 'none';
+msgContainer.style.marginTop = '1rem';
+msgContainer.style.padding = '0.8rem 1rem';
+msgContainer.style.backgroundColor = '#4f46e5';
+msgContainer.style.color = '#fff';
+msgContainer.style.borderRadius = '8px';
+msgContainer.style.textAlign = 'center';
+subscribeForm.appendChild(msgContainer);
+
+subscribeButton.addEventListener('click', (e) => {
+  e.preventDefault();
+  const email = emailInput.value.trim();
+  if(email){
+    msgContainer.textContent = 'Thank you for subscribing!';
+    msgContainer.style.backgroundColor = '#4f46e5';
+    msgContainer.style.display = 'block';
+    emailInput.value = '';
+    setTimeout(() => {
+      msgContainer.style.display = 'none';
+    }, 4000);
+  } else {
+    msgContainer.textContent = 'Please enter a valid email.';
+    msgContainer.style.backgroundColor = '#dc2626'; // red
+    msgContainer.style.display = 'block';
+    setTimeout(() => {
+      msgContainer.style.display = 'none';
+    }, 4000);
+  }
+});
+
+</script>
+
+</body>
+</html>

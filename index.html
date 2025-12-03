@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI in Everyday Life - Home</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar">
+  <div class="logo">AI in Everyday Life</div>
+  <ul class="nav-links">
+    <li><a href="index.html" class="active">Home</a></li>
+    <li><a href="blogs.html">Blogs</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="founders.html">Founders</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="references.html">References</a></li>
+  </ul>
+  <div class="toggle-theme" id="themeToggle">🌙</div>
+</nav>
+
+<!-- Hero Section -->
+<section class="hero">
+  <h1>Explore the World of AI</h1>
+  <p>Discover how artificial intelligence impacts our lives, creativity, and the future.</p>
+  <a href="#blogs" class="btn">See Blogs →</a>
+</section>
+
+<!-- Featured Blogs -->
+<section id="blogs">
+  <h2 style="text-align:center; margin:2rem 0;">Featured Blogs</h2>
+  <div class="blog-grid">
+    <div class="blog-card">
+      <span class="tag">History</span>
+      <h3>How Life Was Before AI</h3>
+      <p>Explore how daily life, work, and creativity functioned before the rise of AI technologies.</p>
+      <a href="topic1.html">Read →</a>
+    </div>
+    <div class="blog-card">
+      <span class="tag">Early AI</span>
+      <h3>AI in Early Days</h3>
+      <p>Learn about the early experiments, pioneers, and foundational technologies of AI.</p>
+      <a href="topic2.html">Read →</a>
+    </div>
+    <div class="blog-card">
+      <span class="tag">Daily Life</span>
+      <h3>AI Integrated in Daily Tasks</h3>
+      <p>See how AI has become part of our routines, tools, and everyday problem-solving.</p>
+      <a href="topic3.html">Read →</a>
+    </div>
+    <div class="blog-card">
+      <span class="tag">Ethics</span>
+      <h3>How Some Abuse AI</h3>
+      <p>Examine risks, misuse, and ethical concerns surrounding artificial intelligence.</p>
+      <a href="topic4.html">Read →</a>
+    </div>
+    <div class="blog-card">
+      <span class="tag">Creativity</span>
+      <h3>AI Destroys Creativity and Problem Solving</h3>
+      <p>Analyze the impact of AI on human creativity, critical thinking, and innovation.</p>
+      <a href="topic5.html">Read →</a>
+    </div>
+  </div>
+</section>
+
+<!-- Explore Categories -->
+<section class="categories">
+  <a href="topic1.html" class="category">History</a>
+  <a href="topic2.html" class="category">Early AI</a>
+  <a href="topic3.html" class="category">Daily Life</a>
+  <a href="topic4.html" class="category">Ethics</a>
+  <a href="topic5.html" class="category">Creativity</a>
+</section>
+
+
+<!-- Newsletter / Subscribe -->
+<section class="newsletter" id="subscribeSection">
+  <h2>Subscribe to Updates</h2>
+  <p>Get the latest AI articles delivered straight to your inbox.</p>
+  <input type="email" placeholder="Enter your email" id="subscribeEmail">
+  <button id="subscribeButton">Subscribe</button>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-section">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="blogs.html">Blogs</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="founders.html">Founders</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-section">
+  <h4>Categories</h4>
+  <ul>
+    <li><a href="topic1.html">History</a></li>
+    <li><a href="topic2.html">Early AI</a></li>
+    <li><a href="topic3.html">Daily Life</a></li>
+    <li><a href="topic4.html">Ethics</a></li>
+    <li><a href="topic5.html">Creativity</a></li>
+  </ul>
+</div>
+
+    <div class="footer-section">
+      <h4>Follow Us</h4>
+      <ul>
+        <li><a href="#">Facebook</a></li>
+        <li><a href="#">Twitter</a></li>
+        <li><a href="#">Instagram</a></li>
+        <li><a href="#">LinkedIn</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    &copy; 2025 AI in Everyday Life. All rights reserved.
+  </div>
+</footer>
+
+<!-- Back to Top -->
+<div id="backToTop">↑</div>
+
+<script>
+const toggle = document.getElementById('themeToggle');
+toggle.addEventListener('click', () => {
+  const html = document.documentElement;
+  if (html.getAttribute('data-theme') === 'dark') {
+    html.removeAttribute('data-theme'); // switch to light
+    toggle.textContent = '🌙';
+  } else {
+    html.setAttribute('data-theme', 'dark'); // switch to dark
+    toggle.textContent = '☀️';
+  }
+});
+
+// Subscribe Form
+const subscribeButton = document.getElementById('subscribeButton');
+const emailInput = document.getElementById('subscribeEmail');
+const subscribeForm = document.getElementById('subscribeSection');
+
+// Create message container
+const msgContainer = document.createElement('div');
+msgContainer.style.display = 'none';
+msgContainer.style.marginTop = '1rem';
+msgContainer.style.padding = '0.8rem 1rem';
+msgContainer.style.backgroundColor = '#4f46e5';
+msgContainer.style.color = '#fff';
+msgContainer.style.borderRadius = '8px';
+msgContainer.style.textAlign = 'center';
+subscribeForm.appendChild(msgContainer);
+
+subscribeButton.addEventListener('click', (e) => {
+  e.preventDefault();
+  const email = emailInput.value.trim();
+  if(email){
+    msgContainer.textContent = 'Thank you for subscribing!';
+    msgContainer.style.backgroundColor = '#4f46e5';
+    msgContainer.style.display = 'block';
+    emailInput.value = '';
+    setTimeout(() => {
+      msgContainer.style.display = 'none';
+    }, 4000);
+  } else {
+    msgContainer.textContent = 'Please enter a valid email.';
+    msgContainer.style.backgroundColor = '#dc2626'; // red
+    msgContainer.style.display = 'block';
+    setTimeout(() => {
+      msgContainer.style.display = 'none';
+    }, 4000);
+  }
+});
+
+</script>
+
+</body>
+</html>

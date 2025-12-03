@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Us - AI in Everyday Life</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar">
+  <div class="logo">AI in Everyday Life</div>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="blogs.html">Blogs</a></li>
+    <li><a href="about.html" class="active">About</a></li>
+    <li><a href="founders.html">Founders</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="references.html">References</a></li>
+  </ul>
+  <div class="toggle-theme" id="themeToggle">🌙</div>
+</nav>
+
+<!-- Hero Section -->
+<section class="hero">
+  <h1>About AI in Everyday Life</h1>
+  <p>Exploring Artificial Intelligence, its impact on society, creativity, and the future.</p>
+</section>
+
+<main class="about-main">
+
+  <!-- About Project -->
+  <section>
+    <h2>Our Project</h2>
+    <p>AI in Everyday Life is a student-led initiative dedicated to exploring the fascinating world of artificial intelligence. Through insightful articles, interactive content, and engaging visuals, we aim to educate and inspire readers from all walks of life.</p>
+    <p>Our goal is to make AI accessible to everyone and spark curiosity about the technologies shaping our future.</p>
+  </section>
+
+  <!-- Mission, Vision, Values -->
+  <section class="blog-grid">
+    <div class="blog-card">
+      <h3>Our Mission</h3>
+      <p>To educate, inform, and inspire readers about AI while providing interactive and engaging blog content.</p>
+    </div>
+    <div class="blog-card">
+      <h3>Our Vision</h3>
+      <p>To be the go-to platform for students and enthusiasts who want to understand AI in the past, present, and future.</p>
+    </div>
+    <div class="blog-card">
+      <h3>Core Values</h3>
+      <ul>
+        <li>Curiosity</li>
+        <li>Integrity</li>
+        <li>Creativity</li>
+        <li>Ethical Responsibility</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Quotes Section -->
+  <section class="about-quote">
+    <blockquote>"The science of today is the technology of tomorrow." – Edward Teller</blockquote>
+    <blockquote>"AI is likely to be either the best or worst thing to happen to humanity." – Stephen Hawking</blockquote>
+    <blockquote>"Artificial Intelligence is not a replacement for humans, but a tool to enhance our creativity and understanding." – AI in Everyday Life</blockquote>
+  </section>
+
+<!-- Newsletter / Subscribe -->
+<section class="newsletter" id="subscribeSection">
+  <h2>Subscribe to Updates</h2>
+  <p>Get the latest AI articles delivered straight to your inbox.</p>
+  <input type="email" placeholder="Enter your email" id="subscribeEmail">
+  <button id="subscribeButton">Subscribe</button>
+</section>
+
+</main>
+
+<!-- Footer -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-section">
+      <h4>Categories</h4>
+      <ul>
+        <li><a href="topic1.html">History</a></li>
+        <li><a href="topic2.html">Early AI</a></li>
+        <li><a href="topic3.html">Daily Life</a></li>
+        <li><a href="topic4.html">Ethics</a></li>
+        <li><a href="topic5.html">Creativity</a></li>
+      </ul>
+    </div>
+    <div class="footer-section">
+      <h4>Follow Us</h4>
+      <ul>
+        <li><a href="#">Facebook</a></li>
+        <li><a href="#">Twitter</a></li>
+        <li><a href="#">Instagram</a></li>
+        <li><a href="#">LinkedIn</a></li>
+      </ul>
+    </div>
+    <div class="footer-section">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="blogs.html">Blogs</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    &copy; 2025 AI in Everyday Life. All rights reserved.
+  </div>
+</footer>
+
+<!-- Back to Top -->
+<div` id="backToTop">↑</div>
+
+<script>
+const toggle = document.getElementById('themeToggle');
+toggle.addEventListener('click', () => {
+  const html = document.documentElement;
+  if (html.getAttribute('data-theme') === 'dark') {
+    html.removeAttribute('data-theme'); // switch to light
+    toggle.textContent = '🌙';
+  } else {
+    html.setAttribute('data-theme', 'dark'); // switch to dark
+    toggle.textContent = '☀️';
+  }
+});
+
+// Subscribe Form
+const subscribeButton = document.getElementById('subscribeButton');
+const emailInput = document.getElementById('subscribeEmail');
+const subscribeForm = document.getElementById('subscribeSection');
+
+// Create message container
+const msgContainer = document.createElement('div');
+msgContainer.style.display = 'none';
+msgContainer.style.marginTop = '1rem';
+msgContainer.style.padding = '0.8rem 1rem';
+msgContainer.style.backgroundColor = '#4f46e5';
+msgContainer.style.color = '#fff';
+msgContainer.style.borderRadius = '8px';
+msgContainer.style.textAlign = 'center';
+subscribeForm.appendChild(msgContainer);
+
+subscribeButton.addEventListener('click', (e) => {
+  e.preventDefault();
+  const email = emailInput.value.trim();
+  if(email){
+    msgContainer.textContent = 'Thank you for subscribing!';
+    msgContainer.style.backgroundColor = '#4f46e5';
+    msgContainer.style.display = 'block';
+    emailInput.value = '';
+    setTimeout(() => {
+      msgContainer.style.display = 'none';
+    }, 4000);
+  } else {
+    msgContainer.textContent = 'Please enter a valid email.';
+    msgContainer.style.backgroundColor = '#dc2626'; // red
+    msgContainer.style.display = 'block';
+    setTimeout(() => {
+      msgContainer.style.display = 'none';
+    }, 4000);
+  }
+});
+
+</script>
+
+
+</body>
+</html>

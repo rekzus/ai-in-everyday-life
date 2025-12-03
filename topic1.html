@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How Life Was Before AI</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="logo">AI in Everyday Life</div>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="blogs.html">Blogs</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="founders.html">Founders</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="references.html">References</a></li>
+  </ul>
+  <div class="toggle-theme" id="themeToggle">🌙</div>
+</nav>
+
+<!-- HERO -->
+<header class="topic-hero fade-in">
+  <h1>How Life Was Before AI</h1>
+  <p>The world moved slower — but thinking was deeper, effort was real, and creativity came from human skill.</p>
+</header>
+
+<main class="topic-container fade-in">
+
+  <!-- CONTENT SECTION -->
+  <article class="topic-article">
+    <h2>The World Before Automation</h2>
+    <p>
+      Before artificial intelligence became a part of daily life, almost everything depended on human effort and ingenuity.
+      People had to research manually, write essays by hand, and complete projects without digital shortcuts. Tasks that are
+      now automated—like summarizing information, designing graphics, or checking data—required patience, skill, and careful planning.
+    </p>
+
+    <p>
+      Education and work were slower but also deeper. Finding synonyms for a word, analyzing a topic for a paper, or preparing
+      reports demanded focus and creativity. Mistakes were frequent, but they were also opportunities to learn. People developed
+      problem-solving skills naturally, relying on reasoning and experience rather than instant solutions.
+    </p>
+
+    <div class="highlight-box">
+      <h3>Creativity and Human Ingenuity</h3>
+      <p>
+        Creativity thrived because every output reflected human thought. Artists, writers, and students had to conceptualize ideas
+        entirely on their own. Collaboration was also deliberate, with discussions, meetings, and exchanges of handwritten notes
+        being the norm. Even simple communications took time, encouraging reflection and thoughtfulness.
+      </p>
+    </div>
+
+    <p>
+      While life before AI might seem inefficient today, it nurtured independence and resilience. Humans became accustomed to
+      doing everything themselves, learning through trial and error, and valuing the process as much as the result. This foundation
+      of self-reliance and focus is a skill set that AI cannot replace.
+    </p>
+  </article>
+
+  <!-- VIDEO SECTION -->
+  <div class="video-section fade-in">
+    <h2>Watch the Vlog</h2>
+    <div class="video-wrapper">
+      <iframe src="https://www.youtube.com/embed/VIDEO_ID_1" title="Vlog 1" allowfullscreen></iframe>
+    </div>
+  </div>
+
+  <!-- RELATED POSTS -->
+  <section class="related fade-in">
+    <h2>Related Posts</h2>
+    <div class="blog-grid">
+      <div class="blog-card">
+        <span class="tag">Early AI</span>
+        <h3>AI in Early Days</h3>
+        <a href="topic2.html">Read →</a>
+      </div>
+      <div class="blog-card">
+        <span class="tag">Daily Life</span>
+        <h3>AI Integrated in Daily Tasks</h3>
+        <a href="topic3.html">Read →</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- Footer -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-section">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="blogs.html">Blogs</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="founders.html">Founders</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-section">
+      <h4>Categories</h4>
+      <ul>
+        <li><a href="topic1.html">History</a></li>
+        <li><a href="topic2.html">Early AI</a></li>
+        <li><a href="topic3.html">Daily Life</a></li>
+        <li><a href="topic4.html">Ethics</a></li>
+        <li><a href="topic5.html">Creativity</a></li>
+      </ul>
+    </div>
+    <div class="footer-section">
+      <h4>Follow Us</h4>
+      <ul>
+        <li><a href="#">Facebook</a></li>
+        <li><a href="#">Twitter</a></li>
+        <li><a href="#">Instagram</a></li>
+        <li><a href="#">LinkedIn</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    &copy; 2025 AI in Everyday Life. All rights reserved.
+  </div>
+</footer>
+
+
+<div id="backToTop">↑</div>
+
+<script>
+const toggle = document.getElementById('themeToggle');
+toggle.addEventListener('click', () => {
+  const html = document.documentElement;
+  if (html.getAttribute('data-theme') === 'dark') {
+    html.removeAttribute('data-theme'); // switch to light
+    toggle.textContent = '🌙';
+  } else {
+    html.setAttribute('data-theme', 'dark'); // switch to dark
+    toggle.textContent = '☀️';
+  }
+});
+
+// Subscribe Form
+const subscribeButton = document.getElementById('subscribeButton');
+const emailInput = document.getElementById('subscribeEmail');
+const subscribeForm = document.getElementById('subscribeSection');
+
+// Create message container
+const msgContainer = document.createElement('div');
+msgContainer.style.display = 'none';
+msgContainer.style.marginTop = '1rem';
+msgContainer.style.padding = '0.8rem 1rem';
+msgContainer.style.backgroundColor = '#4f46e5';
+msgContainer.style.color = '#fff';
+msgContainer.style.borderRadius = '8px';
+msgContainer.style.textAlign = 'center';
+subscribeForm.appendChild(msgContainer);
+
+subscribeButton.addEventListener('click', (e) => {
+  e.preventDefault();
+  const email = emailInput.value.trim();
+  if(email){
+    msgContainer.textContent = 'Thank you for subscribing!';
+    msgContainer.style.backgroundColor = '#4f46e5';
+    msgContainer.style.display = 'block';
+    emailInput.value = '';
+    setTimeout(() => {
+      msgContainer.style.display = 'none';
+    }, 4000);
+  } else {
+    msgContainer.textContent = 'Please enter a valid email.';
+    msgContainer.style.backgroundColor = '#dc2626'; // red
+    msgContainer.style.display = 'block';
+    setTimeout(() => {
+      msgContainer.style.display = 'none';
+    }, 4000);
+  }
+});
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us - AI in Everyday Life</title>
+<link rel="stylesheet" href="style.css">
+<style>
+/* ===========================
+   Contact Page Extra Styles
+=========================== */
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 2rem;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s ease-out;
+}
+
+.contact-form.appear {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.contact-form .form-group {
+  position: relative;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 1rem 1rem 1rem 0.8rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  outline: none;
+  font-size: 1rem;
+  transition: all 0.3s;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 8px rgba(79,70,229,0.3);
+}
+
+.contact-form label {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  font-size: 0.9rem;
+  color: #888;
+  pointer-events: none;
+  transition: all 0.3s;
+}
+
+.contact-form input:focus + label,
+.contact-form input:not(:placeholder-shown) + label,
+.contact-form textarea:focus + label,
+.contact-form textarea:not(:placeholder-shown) + label {
+  top: -10px;
+  left: 10px;
+  font-size: 0.8rem;
+  color: var(--primary-color);
+  background: var(--card-bg);
+  padding: 0 4px;
+}
+
+.contact-form button {
+  padding: 0.8rem;
+  border: none;
+  border-radius: 8px;
+  background-color: var(--primary-color);
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.contact-form button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+}
+
+/* Other contact info */
+.contact-info {
+  margin-top: 3rem;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s ease-out;
+}
+
+.contact-info.appear {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.contact-info p {
+  margin-bottom: 0.5rem;
+}
+
+/* Embedded map */
+.map-container {
+  margin-top: 3rem;
+  border-radius: 12px;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s ease-out;
+}
+
+.map-container.appear {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.map-container iframe {
+  width: 100%;
+  height: 300px;
+  border: none;
+  border-radius: 12px;
+}
+
+/* Responsive */
+@media (max-width:768px){
+  .contact-form input,
+  .contact-form textarea {
+    font-size: 0.95rem;
+  }
+}
+</style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar">
+  <div class="logo">AI in Everyday Life</div>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="blogs.html">Blogs</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="founders.html">Founders</a></li>
+    <li><a href="contact.html" class="active">Contact</a></li>
+    <li><a href="references.html">References</a></li>
+  </ul>
+  <div class="toggle-theme" id="themeToggle">🌙</div>
+</nav>
+
+<main style="padding:2rem; max-width:700px; margin:0 auto;">
+  <section style="text-align:center;">
+    <h1>Contact Us</h1>
+    <p>Have questions or want to reach out? Fill the form below:</p>
+  </section>
+
+  <!-- Contact Form -->
+  <form class="contact-form">
+    <div class="form-group">
+      <input type="text" id="name" placeholder=" " required>
+      <label for="name">Your Name</label>
+    </div>
+    <div class="form-group">
+      <input type="email" id="email" placeholder=" " required>
+      <label for="email">Your Email</label>
+    </div>
+    <div class="form-group">
+      <textarea id="message" rows="5" placeholder=" " required></textarea>
+      <label for="message">Your Message</label>
+    </div>
+    <button type="submit">Send Message</button>
+  </form>
+
+  <!-- Other Contact Info -->
+  <section class="contact-info">
+    <h2>Other Contact Info</h2>
+    <p>Email: AIinEverydayLife_Group7@gmail.com</p>
+    <p>Phone: +63 912 345 6789</p>
+    <p>Address: General Luna, corner Muralla St, Intramuros, Manila, 1002 Metro Manila</p>
+  </section>
+
+  <!-- Map -->
+  <div class="map-container">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3861.174914725093!2d120.9730855251059!3d14.58910683589586!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397ca2336770053%3A0x1b731714778d3506!2sPamantasan%20ng%20Lungsod%20ng%20Maynila!5e0!3m2!1sen!2sph!4v1764766819485!5m2!1sen!2sph"></iframe>
+  </div>
+</main>
+
+<!-- Footer -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-section">
+      <h4>Categories</h4>
+      <ul>
+        <li><a href="topic1.html">History</a></li>
+        <li><a href="topic2.html">Early AI</a></li>
+        <li><a href="topic3.html">Daily Life</a></li>
+        <li><a href="topic4.html">Ethics</a></li>
+        <li><a href="topic5.html">Creativity</a></li>
+      </ul>
+    </div>
+    <div class="footer-section">
+      <h4>Follow Us</h4>
+      <ul>
+        <li><a href="#">Facebook</a></li>
+        <li><a href="#">Twitter</a></li>
+        <li><a href="#">Instagram</a></li>
+        <li><a href="#">LinkedIn</a></li>
+      </ul>
+    </div>
+    <div class="footer-section">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="blogs.html">Blogs</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    &copy; 2025 AI in Everyday Life. All rights reserved.
+  </div>
+</footer>
+
+<div id="backToTop">↑</div>
+
+<script>
+const toggle = document.getElementById('themeToggle');
+toggle.addEventListener('click', () => {
+  const html = document.documentElement;
+  if (html.getAttribute('data-theme') === 'dark') {
+    html.removeAttribute('data-theme'); // switch to light
+    toggle.textContent = '🌙';
+  } else {
+    html.setAttribute('data-theme', 'dark'); // switch to dark
+    toggle.textContent = '☀️';
+  }
+});
+
+// Back to Top
+const backToTop = document.getElementById('backToTop');
+window.addEventListener('scroll', () => backToTop.style.display = window.scrollY > 300 ? 'block' : 'none');
+backToTop.addEventListener('click', () => window.scrollTo({top:0, behavior:'smooth'}));
+
+// Fade-in on scroll
+const faders = document.querySelectorAll('.contact-form, .contact-info, .map-container');
+const appearOptions = { threshold: 0.1, rootMargin: "0px 0px -50px 0px" };
+const appearOnScroll = new IntersectionObserver((entries, appearOnScroll) => {
+  entries.forEach(entry => {
+    if(!entry.isIntersecting) return;
+    entry.target.classList.add('appear');
+    appearOnScroll.unobserve(entry.target);
+  });
+}, appearOptions);
+
+faders.forEach(fader => appearOnScroll.observe(fader));
+
+// Subscribe Form
+const subscribeButton = document.getElementById('subscribeButton');
+const emailInput = document.getElementById('subscribeEmail');
+const subscribeForm = document.getElementById('subscribeSection');
+
+// Create message container
+const msgContainer = document.createElement('div');
+msgContainer.style.display = 'none';
+msgContainer.style.marginTop = '1rem';
+msgContainer.style.padding = '0.8rem 1rem';
+msgContainer.style.backgroundColor = '#4f46e5';
+msgContainer.style.color = '#fff';
+msgContainer.style.borderRadius = '8px';
+msgContainer.style.textAlign = 'center';
+subscribeForm.appendChild(msgContainer);
+
+subscribeButton.addEventListener('click', (e) => {
+  e.preventDefault();
+  const email = emailInput.value.trim();
+  if(email){
+    msgContainer.textContent = 'Thank you for subscribing!';
+    msgContainer.style.backgroundColor = '#4f46e5';
+    msgContainer.style.display = 'block';
+    emailInput.value = '';
+    setTimeout(() => {
+      msgContainer.style.display = 'none';
+    }, 4000);
+  } else {
+    msgContainer.textContent = 'Please enter a valid email.';
+    msgContainer.style.backgroundColor = '#dc2626'; // red
+    msgContainer.style.display = 'block';
+    setTimeout(() => {
+      msgContainer.style.display = 'none';
+    }, 4000);
+  }
+});
+
+</script>
+
+</body>
+</html>
